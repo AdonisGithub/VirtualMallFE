@@ -1,6 +1,6 @@
 import { userConstants } from '../_constants';
 import axios from "axios";
-import  {SuccessAlert} from "../components/common/ToastAlert";
+import  {SuccessAlert, DefaultAlert} from "../components/common/ToastAlert";
 import {ErrorAlert} from "../components/common/ToastAlert";
 const API_URL = "https://theinfiniteplaza.com";
 //const API_URL = "http://localhost:8080";
@@ -13,6 +13,14 @@ const API_URL = "https://theinfiniteplaza.com";
             .then(res => { 
                     console.log('received data:', res.data);
                     SuccessAlert(res.data);
+                    axios.post(API_URL + "/api/wellcomeemail",{email:registeruserdata.email} )
+                    .then(res => { 
+                      console.log(res.data);
+                      })
+                    .catch(err =>{ 
+                      console.log(err.response.data); 
+                    });
+                    DefaultAlert("Please Check your email!");
                     dispatch({
                         type: userConstants.REGISTER_SUCCESS, 
                         payload: "success"
