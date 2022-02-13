@@ -1,13 +1,13 @@
 import React,{useState} from "react";
-import {SuccessAlert, ErrorAlert, WarningAlert, DefaultAlert} from "../../components/common/ToastAlert";
-import { useNavigate } from "react-router-dom";
+import {ErrorAlert, WarningAlert, DefaultAlert} from "../../components/common/ToastAlert";
+//import { useNavigate } from "react-router-dom";
 import validator from 'validator';
 import axios from "axios";
-const API_URL = "http://165.232.157.54";
+const API_URL = "https://theinfiniteplaza.com";
 //const API_URL = "http://localhost:8080";
 
 const ResetPasswordPage = () => {
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   const [user, setUser] = useState({
     email: "",
     password: "",

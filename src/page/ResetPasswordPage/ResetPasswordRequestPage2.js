@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import {ErrorAlert} from "../../components/common/ToastAlert";
-const API_URL = "http://165.232.157.54";
+const API_URL = "https://theinfiniteplaza.com";
 //const API_URL = "http://localhost:8080";
 
 const ResetPasswordRequestPage2 = () => {
