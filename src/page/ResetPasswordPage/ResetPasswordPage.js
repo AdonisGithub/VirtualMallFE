@@ -32,8 +32,15 @@ const ResetPasswordPage = () => {
       axios.post(API_URL + "/api/auth/resetpassword",resetuserdata )
       .then(res => { 
         console.log(res.data);
-        DefaultAlert("Please check your email!");
-        })
+        axios.post(API_URL + "/api/resetpasswordemailafter",{email:user.email} )
+        .then(res => { 
+          console.log(res.data);
+          })
+        .catch(err =>{ 
+          console.log(err.response.data); 
+        });
+        DefaultAlert("Please Check your email!");
+      })
       .catch(err =>{ 
         console.log(err.response.data);
         ErrorAlert(err.response.data);   

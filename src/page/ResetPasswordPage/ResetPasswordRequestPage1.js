@@ -19,7 +19,7 @@ const ResetPasswordRequestPage1 = () => {
     console.log(email);
     if(validator.isEmail(email)){
       localStorage.setItem('ResendEmail', email); //*******Localstorage********/
-      axios.post(API_URL + "/api/email",{email:email} )
+      axios.post(API_URL + "/api/resetpasswordrequestemail",{email:email} )
       .then(res => { 
         console.log(res.data);
         })

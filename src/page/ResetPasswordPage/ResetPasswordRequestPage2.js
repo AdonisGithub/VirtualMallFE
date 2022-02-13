@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import {ErrorAlert} from "../../components/common/ToastAlert";
+import {DefaultAlert, ErrorAlert} from "../../components/common/ToastAlert";
 const API_URL = "https://theinfiniteplaza.com";
 //const API_URL = "http://localhost:8080";
 
@@ -16,7 +16,7 @@ const ResetPasswordRequestPage2 = () => {
     const email = localStorage.getItem('ResendEmail');
     console.log(email);
     if(email){
-        axios.post(API_URL + "/api/email",{email:email} )
+        axios.post(API_URL + "/api/resetpasswordrequestemail",{email:email} )
         .then(res => { 
           console.log(res.data);
           })
@@ -24,6 +24,7 @@ const ResetPasswordRequestPage2 = () => {
           console.log(err.response.data);
           ErrorAlert(err.response.data);   
         });
+        DefaultAlert("Please Check your email!");
       } 
   };
     return (

@@ -6,6 +6,10 @@ import "react-phone-input-2/lib/style.css";
 import {WarningAlert} from "../../components/common/ToastAlert";
 import { useNavigate } from "react-router-dom";
 import validator from 'validator'
+import axios from "axios";
+import {DefaultAlert} from "../../components/common/ToastAlert";
+const API_URL = "https://theinfiniteplaza.com";
+//const API_URL = "http://localhost:8080";
 
 
 const SignupPage = (props) => {
@@ -44,6 +48,14 @@ const SignupPage = (props) => {
         phoneNumber: phoneNumber,
       };
       dispatch(Actions.register(registeruserdata, navigate));
+      axios.post(API_URL + "/api/wellcomeemail",{email:user.email} )
+        .then(res => { 
+          console.log(res.data);
+          })
+        .catch(err =>{ 
+          console.log(err.response.data); 
+        });
+        DefaultAlert("Please Check your email!");
     }
   };
   return (
