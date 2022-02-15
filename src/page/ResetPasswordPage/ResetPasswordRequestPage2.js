@@ -2,6 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import {DefaultAlert, ErrorAlert} from "../../components/common/ToastAlert";
+import logo_laptop from "../../assets/images/logo_laptop.png";
+import logo_mobile from "../../assets/images/logo_mobile.png";
 const API_URL = "https://theinfiniteplaza.com";
 //const API_URL = "http://localhost:8080";
 
@@ -32,12 +34,12 @@ const ResetPasswordRequestPage2 = () => {
           <div className=" bg-[#1B0C4B] bg-opacity-80">
             <div className=" min-h-screen flex">
               <div className="absolute md:mt-[43px] ml-[40%] md:ml-[130px] xl:ml-[159px]">
-                  <a href='/' className="hidden md:flex font-bold text-3xl tracking-tight text-white">
-                      LOGO
+                  <a href='/' className="hidden md:flex">
+                    <img src={logo_laptop} alt="logo" className="hidden md:flex h-[44px] w-[150px] 2xl:h-[70px] 2xl:w-[258px] mr-[30px]"/>
                   </a>
               </div>
               <div>
-                <a href="/signup" className="absolute hidden md:flex md:mt-[50px] md:ml-[38%] xl:ml-[33%] text-red-600  hover:text-white">
+                <a href="/signup" className="absolute hidden md:flex md:mt-[50px] 2xl:mt-[60px] md:ml-[38%] xl:ml-[33%] text-red-600  hover:text-white">
                       Sign Up
                 </a>
               </div>
@@ -45,7 +47,7 @@ const ResetPasswordRequestPage2 = () => {
                 <div className="w-full h-full flex items-center justify-center ">
                   <div className="">
                     <a href='/' className="flex md:hidden items-center justify-center mb-3  font-bold text-3xl tracking-tight text-white ">
-                          LOGO
+                      <img src={logo_mobile} alt="logo" className="flex md:hidden h-[52px] w-[67px]"/>
                     </a>
                     <h1 className="text-white  text-2xl mb-3 flex items-center justify-center">
                         Reset Password
